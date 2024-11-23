@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanat Prakash - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('Picsart_24-11-23_10-08-05-196.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        /* Typewriter Animation */
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .typewriter {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff; /* Cursor effect */
+            display: inline-block;
+            animation: typewriter 4s steps(30, end) 1s normal both, blink 0.7s step-end infinite;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #e04b20;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: #ff5733;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #about, #skills {
+            background: #f4f4f4;
+        }
+
+        #projects {
+            background: white;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Projects Section */
+        .project-card {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Skills Section */
+        #skills ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        #skills ul li {
+            background: #ff5733;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Me Section */
+        #contact {
+            background: linear-gradient(to right, #fb603d, #ffd333);
+            padding: 60px 20px;
+            color: white;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #contact form input:focus,
+        #contact form textarea:focus {
+            border-color: #ff5733;
+        }
+
+        #contact form textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        #contact form button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff5733;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #contact form button:hover {
+            background: #e04b20;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="overlay">
+            <h1 class="typewriter">I'm Sanat, a Web Developer</h1>
+            <p>Innovator | Programmer | Web Developer</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am Sanat Prakash, an MCA student specializing in Cyber Security. I am passionate about web development, programming, and robotics.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>College Website</h3>
+            <p>Responsive college website with modern design.</p>
+        </div>
+        <div class="project-card">
+            <h3>C++ Game</h3>
+            <p>A basic interactive game developed in C++.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: C, C++, Python</li>
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Database: SQL, Mini DB Systems</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1bf7161a-79e2-4771-92f9-81844dcc0439">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sanat Prakash | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
